@@ -1,0 +1,26 @@
+# minikube UI
+minikube dashboard
+
+# Deploy containers
+kubectl run hello-kubernetes --replicas=3 --image=paulbouwer/hello-kubernetes:1.5 --port=8080
+kubectl expose deployement hello-kubernetes --type=LoadBaLancer --port=80 --target-port=8080 --name=hello-kubernetes
+
+minikube dashboard
+
+
+cd /Users/moufkir/kubernetes/helloWorldApp/kubernetes/helloWorldK8sDemo
+
+# Pod creation
+kubectl create -f helloWorldPod.yml
+kubectl port-forward helloworld.oracleau.cloud 8081:3000
+
+# browser: http://localhost:8081/
+
+kubectl get pods
+kubectl delete pod helloworld.oracleau.cloud
+
+
+# Deployment creation
+kubectl create -f pod-deployment.yml
+kubectl get deployments
+kubectl delete deployment helloworldk8sdemo

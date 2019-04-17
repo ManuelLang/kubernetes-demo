@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helloworldk8sdemo
+  labels:
+    app: helloworldk8sdemo
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: helloworldk8sdemo
+  template:
+    metadata:
+      labels:
+        app: helloworldk8sdemo
+    spec:
+      containers:
+      - name: helloworldk8sdemo
+        image: cciturria/helloworldk8sdemo
+        ports:
+        - name: nodejs-port
+          containerPort: 80
